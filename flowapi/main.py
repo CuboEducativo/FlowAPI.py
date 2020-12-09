@@ -1,4 +1,4 @@
-from payment import Payment
+from flowapi.payment import Payment
 
 
 class FlowAPI:
