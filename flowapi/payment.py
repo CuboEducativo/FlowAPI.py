@@ -11,6 +11,16 @@ class Payment:
     def signParams(self, params):
         return helpers.signParams(self.secret_key, params)
 
+    def create(self, params):
+        params = helpers.parseToStringDictionary(params)
+        params['apiKey'] = self.api_key
+        params['s'] = self.signParams(params)
+        response = requests.post(
+          '{}/payment/create'.format(self.api_url),
+          data=params)
+
+        return response.json()
+
     def get_status(self, token):
         params = {
             'apiKey': self.api_key,
@@ -23,16 +33,6 @@ class Payment:
           )
         return status.json()
 
-    def create(self, params):
-        params = helpers.parseToStringDictionary(params)
-        params['apiKey'] = self.api_key
-        params['s'] = self.signParams(params)
-        response = requests.post(
-          '{}/payment/create'.format(self.api_url),
-          data=params)
-
-        return response.json()
-
     def get_status_by_commerce_id(self, commerce_id):
         params = {
             'apiKey': self.api_key,
@@ -41,6 +41,18 @@ class Payment:
         params['s'] = self.signParams(params)
         status = requests.get(
           '{}/payment/getStatusByCommerceId'.format(self.api_url),
+          params=params
+          )
+        return status.json()
+
+    def get_status_by_flow_order(self, flow_order):
+        params = {
+            'apiKey': self.api_key,
+            'flowOrder': flow_order
+        }
+        params['s'] = self.signParams(params)
+        status = requests.get(
+          '{}/payment/getStatusByFlowOrder'.format(self.api_url),
           params=params
           )
         return status.json()
