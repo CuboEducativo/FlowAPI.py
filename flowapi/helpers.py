@@ -10,7 +10,7 @@ def parseToStringDictionary(dictionary):
             new_dict[key] = dictionary[key]
         else:
             str_value = json.dumps(dictionary[key])
-        new_dict[key] = str_value
+            new_dict[key] = str_value
     return new_dict
 
 
