@@ -4,14 +4,14 @@ from distutils.core import setup
 setup(
   name='flowapi',
   packages=['flowapi'],
-  version='0.0.4',
+  version='0.0.5',
   license='MIT',
   description='Use the Flow.cl\'s REST API without problems',
   author='Gabriel Pérez',
   author_email='gabriel@garox.org',
   url='https://github.com/cuboEducativo/FlowAPI.py',
   download_url='https://github.com/CuboEducativo/FlowAPI.py/\
-      archive/0.0.4.tar.gz',
+      archive/0.0.5.tar.gz',
   keywords=['flow', 'api', 'py', 'flow.cl'],
   install_requires=[
           'requests',
