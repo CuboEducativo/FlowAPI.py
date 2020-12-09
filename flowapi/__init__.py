@@ -1,1 +1,1 @@
-import main
+from flowapi.main import FlowAPI

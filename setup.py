@@ -10,8 +10,8 @@ setup(
   author='Gabriel Pérez',
   author_email='gabriel@garox.org',
   url='https://github.com/cuboEducativo/FlowAPI.py',
-  download_url='https://github.com/cuboEducativo/FlowAPI.py/\
-      archive/pypi-0_0_1.tar.gz',
+  download_url='https://github.com/CuboEducativo/FlowAPI.py/\
+      archive/0.0.2.tar.gz',
   keywords=['flow', 'api', 'py', 'flow.cl'],
   install_requires=[
           'requests',
